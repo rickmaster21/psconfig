@@ -38,7 +38,7 @@ CONFIG_NEUTRON_INSTALL=y
 CONFIG_HORIZON_INSTALL=y
 
 # Specify 'y' to install OpenStack Object Storage (swift). ['y', 'n']
-CONFIG_SWIFT_INSTALL=y
+CONFIG_SWIFT_INSTALL=n
 
 # Specify 'y' to install OpenStack Metering (ceilometer). Note this
 # will also automatically install gnocchi service and configures it as
@@ -54,7 +54,7 @@ CONFIG_PANKO_INSTALL=n
 
 # Specify 'y' to install OpenStack Data Processing (sahara). In case
 # of sahara installation packstack also installs heat.['y', 'n']
-CONFIG_SAHARA_INSTALL=n
+CONFIG_SAHARA_INSTALL=y
 
 # Specify 'y' to install OpenStack Orchestration (heat). ['y', 'n']
 CONFIG_HEAT_INSTALL=n
@@ -64,11 +64,11 @@ CONFIG_HEAT_INSTALL=n
 CONFIG_MAGNUM_INSTALL=n
 
 # Specify 'y' to install OpenStack Database (trove) ['y', 'n']
-CONFIG_TROVE_INSTALL=n
+CONFIG_TROVE_INSTALL=y
 
 # Specify 'y' to install OpenStack Bare Metal Provisioning (ironic).
 # ['y', 'n']
-CONFIG_IRONIC_INSTALL=n
+CONFIG_IRONIC_INSTALL=y
 
 # Specify 'y' to install the OpenStack Client packages (command-line
 # tools). An admin "rc" file will also be installed. ['y', 'n']
@@ -247,16 +247,16 @@ CONFIG_SSL_CERT_DIR=~/packstackca/
 CONFIG_SSL_CACERT_SELFSIGN=y
 
 # Enter the ssl certificates subject country.
-CONFIG_SSL_CERT_SUBJECT_C=--
+CONFIG_SSL_CERT_SUBJECT_C=usa
 
 # Enter the ssl certificates subject state.
-CONFIG_SSL_CERT_SUBJECT_ST=State
+CONFIG_SSL_CERT_SUBJECT_ST=CA
 
 # Enter the ssl certificates subject location.
-CONFIG_SSL_CERT_SUBJECT_L=City
+CONFIG_SSL_CERT_SUBJECT_L=ca
 
 # Enter the ssl certificates subject organization.
-CONFIG_SSL_CERT_SUBJECT_O=openstack
+CONFIG_SSL_CERT_SUBJECT_O=Richards
 
 # Enter the ssl certificates subject organizational unit.
 CONFIG_SSL_CERT_SUBJECT_OU=packstack
@@ -264,7 +264,7 @@ CONFIG_SSL_CERT_SUBJECT_OU=packstack
 # Enter the ssl certificates subject common name.
 CONFIG_SSL_CERT_SUBJECT_CN=localhost.localdomain
 
-CONFIG_SSL_CERT_SUBJECT_MAIL=admin@localhost.localdomain
+CONFIG_SSL_CERT_SUBJECT_MAIL=rick@richardsheffer.com
 
 # Service to be used as the AMQP broker. Allowed values are: rabbitmq
 # ['rabbitmq']
@@ -323,7 +323,7 @@ CONFIG_KEYSTONE_ADMIN_EMAIL=root@localhost
 CONFIG_KEYSTONE_ADMIN_USERNAME=admin
 
 # Password to use for the Identity service 'admin' user.
-CONFIG_KEYSTONE_ADMIN_PW=61dc02a6e7624c90
+CONFIG_KEYSTONE_ADMIN_PW=pass
 
 # Password to use for the Identity service 'demo' user.
 CONFIG_KEYSTONE_DEMO_PW=857bb4f83c374666
@@ -724,11 +724,11 @@ CONFIG_NOVA_MANAGE_FLAVORS=y
 
 # Overcommitment ratio for virtual to physical CPUs. Specify 1.0 to
 # disable CPU overcommitment.
-CONFIG_NOVA_SCHED_CPU_ALLOC_RATIO=16.0
+CONFIG_NOVA_SCHED_CPU_ALLOC_RATIO=1
 
 # Overcommitment ratio for virtual to physical RAM. Specify 1.0 to
 # disable RAM overcommitment.
-CONFIG_NOVA_SCHED_RAM_ALLOC_RATIO=1.5
+CONFIG_NOVA_SCHED_RAM_ALLOC_RATIO=1
 
 # Protocol used for instance migration. Valid options are: ssh and
 # tcp. Note that the tcp protocol is not encrypted, so it is insecure.
@@ -866,7 +866,7 @@ CONFIG_NEUTRON_OVS_BRIDGE_MAPPINGS=extnet:br-ex
 # issuing the following command: packstack --allinone --os-neutron-
 # ovs-bridge-mappings=ext-net:br-ex --os-neutron-ovs-bridge-interfaces
 # =br-ex:eth0
-CONFIG_NEUTRON_OVS_BRIDGE_IFACES=
+CONFIG_NEUTRON_OVS_BRIDGE_IFACES=br-ex:eth0
 
 # Comma-separated list of Open vSwitch bridges that must be created
 # and connected to interfaces in compute nodes when flat or vlan type
@@ -1178,7 +1178,7 @@ CONFIG_HEAT_DOMAIN_ADMIN=heat_admin
 CONFIG_HEAT_DOMAIN_PASSWORD=PW_PLACEHOLDER
 
 # Specify 'y' to provision for demo usage and testing. ['y', 'n']
-CONFIG_PROVISION_DEMO=y
+CONFIG_PROVISION_DEMO=n
 
 # Specify 'y' to configure the OpenStack Integration Test Suite
 # (tempest) for testing. The test suite requires OpenStack Networking
